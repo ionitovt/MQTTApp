@@ -5,8 +5,6 @@
 InputMqttClient::InputMqttClient(QWidget *parent)
     : QLineEdit(parent), m_client(new QMqttClient(this)) {
     this->setValidator(new QIntValidator(this));
-    // Connect the signal that the QLineEdit emits when its text is edited
-    connect(this, &QLineEdit::textEdited, this, &InputMqttClient::publishMessage);
 }
 
 void InputMqttClient::connectToBroker(const QString &hostname, quint16 port) {

@@ -19,6 +19,8 @@ set(PROJECT_SOURCES
         mainwindow.ui
         inputmqttclient.cpp
         inputmqttclient.h
+        outputmqttclient.h
+        outputmqttclient.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
