@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
+  ['generating_20the_20doxygen_20documentation_0',['Generating the Doxygen documentation',['../index.html#generating-the-doxygen-documentation',1,'']]],
+  ['getting_20started_1',['Getting Started',['../index.html#getting-started',1,'']]]
 ];

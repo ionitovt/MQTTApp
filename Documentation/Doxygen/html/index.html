@@ -94,7 +94,67 @@ $(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">MQTTApp </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a>A simple desctop app using the MQTT protocol for communication </p>
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> MQTTApp is a Qt-based desktop application that illustrates the data transfer via the MQTT protocol. It allows users to publish and subscribe to topics and visualize message flow in real-time.</p>
+<h1><a class="anchor" id="features"></a>
+Features</h1>
+<ul>
+<li>Real-time publishing and subscription to MQTT topics.</li>
+<li>User-friendly interface for interacting with MQTT brokers.</li>
+<li>Supports multiple topics and wildcard subscriptions.</li>
+<li>Displays incoming messages for subscribed topics.</li>
+<li>Cross-platform support, built using the Qt framework.</li>
+<li>Doxygen support</li>
+<li>Permissive license</li>
+</ul>
+<h1><a class="anchor" id="set-up-diagram"></a>
+Set-up Diagram</h1>
+<p>Below is a diagram explaining how the components are communicating with each other through the MQTT broker: <img src="mqtt_communication_diagram.png" alt="" class="inline" title="MQTT Communication Diagram"/>    </p>
+<h1><a class="anchor" id="getting-started"></a>
+Getting Started</h1>
+<p>These instructions will get you a copy of the project up and running on your local machine.</p>
+<h2><a class="anchor" id="prerequisites"></a>
+Prerequisites</h2>
+<ul>
+<li><b>Qt 6.1.1</b> - <a href="https://doc.qt.io/">https://doc.qt.io/</a></li>
+<li><b>Qt MQTT lib ver. 6.1.1</b> - <a href="https://github.com/qt/qtmqtt">https://github.com/qt/qtmqtt</a></li>
+</ul>
+<blockquote class="doxtable">
+<p>&zwj;<em><b>Note:</b></em> <em>You need to integrate the qtmqtt library into the <em><b>Qt</b></em> enviorment.</em> </p>
+</blockquote>
+<h2><a class="anchor" id="installing"></a>
+Installing</h2>
+<p>Clone the MQTTApp repository from <a href="https://github.com/ionitovt/MQTTApp.git">GitHub</a>:</p>
+<div class="fragment"><div class="line">git clone https://github.com/ionitovt/MQTTApp.git</div>
+</div><!-- fragment --><h1><a class="anchor" id="building-the-project"></a>
+Building the project</h1>
+<p>To build the project, all you need to do, <em><b>after correctly <a href="README.md#Installing">installing the project</a></b></em>, is to set up <b>Qt</b></p>
+<p>When you start the Qt Creator and open the project you will be prompted to choose a compiler kit. Choose the kit appropriate for your system.</p>
+<p>Example: If you want to build the application for Windows choose the <b>Desktop Qt 6.6.1 MinGW 64-bit</b> kit and click build</p>
+<h1><a class="anchor" id="documentation"></a>
+Documentation</h1>
+<p>The project uses Doxygen for generating code documentation. You can find the Doxygen HTML output in the "Documentation/html" directory. Open index.html in your web browser to view the documentation.</p>
+<p>You can also check the User Manual <code>MQTTApp_Tutorial.pdf</code> in the "Documentation" directory.</p>
+<h1><a class="anchor" id="generating-the-doxygen-documentation"></a>
+Generating the Doxygen documentation</h1>
+<p>In order to generate documentation for the project, you need use Doxygen.</p>
+<p>If you do not have Doxygen installed, download and install it from the <a href="http://www.doxygen.nl/">official Doxygen website</a>. Ensure that the <code>doxygen</code> command is available in your system's PATH.</p>
+<p>***For Linux follow these steps:**</p>
+<p>Open a terminal and navigate to the root directory of the MQTTApp project where the configuration file (<code>Doxyfile</code>) is located.</p>
+<p>Run Doxygen with: </p><div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p>***For Windows:**</p>
+<p>For Windows you can open the <code>DoxyWizard</code> and load the current configuration from the DoxyFile and click the "Run doxygen" button as shown below:</p>
+<div class="image">
+<img src="screenshot.png" alt=""/>
+<div class="caption">
+DoxyWizard screenshot</div></div>
+    <h1><a class="anchor" id="authors"></a>
+Authors</h1>
+<ul>
+<li><b>Yoan Tyankovski</b> - <a href="https://github.com/ionitovt">@filipdutescu</a></li>
+</ul>
+<h1><a class="anchor" id="license"></a>
+License</h1>
+<p>This project is licensed under the <a href="https://unlicense.org/">Unlicense</a> - see the <a href="LICENSE.txt">LICENSE</a> file for details </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->

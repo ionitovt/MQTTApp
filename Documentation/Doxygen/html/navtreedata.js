@@ -25,6 +25,17 @@
 var NAVTREE =
 [
   [ "MQTTApp", "index.html", [
+    [ "Features", "index.html#features", null ],
+    [ "Set-up Diagram", "index.html#set-up-diagram", null ],
+    [ "Getting Started", "index.html#getting-started", [
+      [ "Prerequisites", "index.html#prerequisites", null ],
+      [ "Installing", "index.html#installing", null ]
+    ] ],
+    [ "Building the project", "index.html#building-the-project", null ],
+    [ "Documentation", "index.html#documentation", null ],
+    [ "Generating the Doxygen documentation", "index.html#generating-the-doxygen-documentation", null ],
+    [ "Authors", "index.html#authors", null ],
+    [ "License", "index.html#license", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
