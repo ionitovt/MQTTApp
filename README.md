@@ -15,7 +15,7 @@ MQTTApp is a Qt-based desktop application that illustrates the data transfer via
 ## Set-up Diagram
 
 Below is a diagram explaining how the components are communicating with each other through the MQTT broker:
-![MQTT Communication Diagram](images/mqtt_communication_diagram.png "MQTT Communication Diagram")
+![MQTT Communication Diagram](Documentation/images/mqtt_communication_diagram.png "MQTT Communication Diagram")
 
 ## Getting Started
 
@@ -80,7 +80,7 @@ For Windows you can open the `DoxyWizard` and load the current
 configuration from the DoxyFile and click the "Run doxygen" button
 as shown below:
 
-![DoxyWizard screenshot](images/screenshot.png "DoxyWizard screenshot")
+![DoxyWizard screenshot](Documentation/images/screenshot.png "DoxyWizard screenshot")
 
 ## Authors
 
