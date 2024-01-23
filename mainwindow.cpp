@@ -1,8 +1,27 @@
+/**
+ * @file MainWindow.cpp
+ * @author Yoan Tynakovski
+ * @date 23.01.2024
+ * @brief Implementation file for the MainWindow class.
+ *
+ * This source file contains the implementation of the MainWindow class,
+ * which sets up the main window of the application. It includes the setup of
+ * MQTT client connections and subscriptions. The file demonstrates the integration
+ * of the InputMqttClient and OutputMqttClient classes into a Qt-based user interface.
+ */
+
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "inputmqttclient.h"
 #include "outputmqttclient.h"
 
+///
+/// @brief Constructs a MainWindow object.
+/// @param parent The parent widget, default is nullptr.
+///
+/// This constructor initializes the main window, setting up the user interface
+/// and connecting the MQTT clients to their respective brokers and topics.
+///
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -27,6 +46,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->output_2->subscribeToTopic("A/+", 1); // using wildcards to subscribe to multiple topics with a single subscription
 }
 
+///
+/// @brief Destructor for MainWindow.
+///
+/// Cleans up the UI components when the MainWindow object is destroyed.
+///
 MainWindow::~MainWindow()
 {
     delete ui;

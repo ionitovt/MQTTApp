@@ -1,0 +1,154 @@
+\doxysection{Input\+Mqtt\+Client Class Reference}
+\hypertarget{class_input_mqtt_client}{}\label{class_input_mqtt_client}\index{InputMqttClient@{InputMqttClient}}
+
+
+The \doxylink{class_input_mqtt_client}{Input\+Mqtt\+Client} class extends \doxylink{class_q_line_edit}{QLine\+Edit} to provide MQTT publishing capabilities.  
+
+
+
+
+{\ttfamily \#include $<$inputmqttclient.\+h$>$}
+
+
+
+Inheritance diagram for Input\+Mqtt\+Client\+:
+% FIG 0
+
+
+Collaboration diagram for Input\+Mqtt\+Client\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_mqtt_client_a1b956051e798aa2235a9807a6f72f776}{Input\+Mqtt\+Client}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_input_mqtt_client}{Input\+Mqtt\+Client} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_mqtt_client_a81148037645765b580a6b31e982ff787}{connect\+To\+Broker}} (const QString \&hostname, quint16 port)
+\begin{DoxyCompactList}\small\item\em Connects to the MQTT broker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_mqtt_client_ac7ff830ba37c49ef2a0ec3e27bc8e63a}{set\+Topic}} (const QString \&topic)
+\begin{DoxyCompactList}\small\item\em Sets the MQTT topic for publishing messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_mqtt_client_a468224762c4313c108ec391f881e8ea0}{publish\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Publishes the current text to the MQTT topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QMqtt\+Client \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}{m\+\_\+client}}
+\item 
+QString \mbox{\hyperlink{class_input_mqtt_client_afe6034971f369bf3f521b4dfa81c35d5}{m\+\_\+topic}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_input_mqtt_client}{Input\+Mqtt\+Client} class extends \doxylink{class_q_line_edit}{QLine\+Edit} to provide MQTT publishing capabilities. 
+
+This class is designed to integrate MQTT publishing with a \doxylink{class_q_line_edit}{QLine\+Edit} widget, allowing the user to input text and publish it to an MQTT topic. 
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8h_source_l00026}{26}} of file \mbox{\hyperlink{inputmqttclient_8h_source}{inputmqttclient.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_input_mqtt_client_a1b956051e798aa2235a9807a6f72f776}\label{class_input_mqtt_client_a1b956051e798aa2235a9807a6f72f776} 
+\index{InputMqttClient@{InputMqttClient}!InputMqttClient@{InputMqttClient}}
+\index{InputMqttClient@{InputMqttClient}!InputMqttClient@{InputMqttClient}}
+\doxysubsubsection{\texorpdfstring{InputMqttClient()}{InputMqttClient()}}
+{\footnotesize\ttfamily Input\+Mqtt\+Client\+::\+Input\+Mqtt\+Client (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_input_mqtt_client}{Input\+Mqtt\+Client} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget, default is nullptr. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{inputmqttclient_8cpp_source}{inputmqttclient.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_mqtt_client_a81148037645765b580a6b31e982ff787}\label{class_input_mqtt_client_a81148037645765b580a6b31e982ff787} 
+\index{InputMqttClient@{InputMqttClient}!connectToBroker@{connectToBroker}}
+\index{connectToBroker@{connectToBroker}!InputMqttClient@{InputMqttClient}}
+\doxysubsubsection{\texorpdfstring{connectToBroker()}{connectToBroker()}}
+{\footnotesize\ttfamily void Input\+Mqtt\+Client\+::connect\+To\+Broker (\begin{DoxyParamCaption}\item[{const QString \&}]{hostname,  }\item[{quint16}]{port }\end{DoxyParamCaption})}
+
+
+
+Connects to the MQTT broker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & The hostname or IP of the MQTT broker. \\
+\hline
+{\em port} & The network port of the MQTT broker, default MQTT port is 1883. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{inputmqttclient_8cpp_source}{inputmqttclient.\+cpp}}.
+
+\Hypertarget{class_input_mqtt_client_a468224762c4313c108ec391f881e8ea0}\label{class_input_mqtt_client_a468224762c4313c108ec391f881e8ea0} 
+\index{InputMqttClient@{InputMqttClient}!publishMessage@{publishMessage}}
+\index{publishMessage@{publishMessage}!InputMqttClient@{InputMqttClient}}
+\doxysubsubsection{\texorpdfstring{publishMessage()}{publishMessage()}}
+{\footnotesize\ttfamily void Input\+Mqtt\+Client\+::publish\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Publishes the current text to the MQTT topic. 
+
+
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{inputmqttclient_8cpp_source}{inputmqttclient.\+cpp}}.
+
+\Hypertarget{class_input_mqtt_client_ac7ff830ba37c49ef2a0ec3e27bc8e63a}\label{class_input_mqtt_client_ac7ff830ba37c49ef2a0ec3e27bc8e63a} 
+\index{InputMqttClient@{InputMqttClient}!setTopic@{setTopic}}
+\index{setTopic@{setTopic}!InputMqttClient@{InputMqttClient}}
+\doxysubsubsection{\texorpdfstring{setTopic()}{setTopic()}}
+{\footnotesize\ttfamily void Input\+Mqtt\+Client\+::set\+Topic (\begin{DoxyParamCaption}\item[{const QString \&}]{topic }\end{DoxyParamCaption})}
+
+
+
+Sets the MQTT topic for publishing messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em topic} & The MQTT topic to publish to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{inputmqttclient_8cpp_source}{inputmqttclient.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}\label{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104} 
+\index{InputMqttClient@{InputMqttClient}!m\_client@{m\_client}}
+\index{m\_client@{m\_client}!InputMqttClient@{InputMqttClient}}
+\doxysubsubsection{\texorpdfstring{m\_client}{m\_client}}
+{\footnotesize\ttfamily QMqtt\+Client\texorpdfstring{$\ast$}{*} Input\+Mqtt\+Client\+::m\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8h_source_l00036}{36}} of file \mbox{\hyperlink{inputmqttclient_8h_source}{inputmqttclient.\+h}}.
+
+\Hypertarget{class_input_mqtt_client_afe6034971f369bf3f521b4dfa81c35d5}\label{class_input_mqtt_client_afe6034971f369bf3f521b4dfa81c35d5} 
+\index{InputMqttClient@{InputMqttClient}!m\_topic@{m\_topic}}
+\index{m\_topic@{m\_topic}!InputMqttClient@{InputMqttClient}}
+\doxysubsubsection{\texorpdfstring{m\_topic}{m\_topic}}
+{\footnotesize\ttfamily QString Input\+Mqtt\+Client\+::m\+\_\+topic\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{inputmqttclient_8h_source_l00037}{37}} of file \mbox{\hyperlink{inputmqttclient_8h_source}{inputmqttclient.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ionit/\+Documents/\+MQTTApp/\mbox{\hyperlink{inputmqttclient_8h}{inputmqttclient.\+h}}\item 
+C\+:/\+Users/ionit/\+Documents/\+MQTTApp/\mbox{\hyperlink{inputmqttclient_8cpp}{inputmqttclient.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,30 @@
+\doxysection{inputmqttclient.\+cpp}
+\hypertarget{inputmqttclient_8cpp_source}{}\label{inputmqttclient_8cpp_source}\mbox{\hyperlink{inputmqttclient_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{inputmqttclient_8h}{inputmqttclient.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <QIntValidator>}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00015}\mbox{\hyperlink{class_input_mqtt_client_a1b956051e798aa2235a9807a6f72f776}{00015}}\ \mbox{\hyperlink{class_input_mqtt_client_a1b956051e798aa2235a9807a6f72f776}{InputMqttClient::InputMqttClient}}(QWidget\ *parent)}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00016}00016\ \ \ \ \ :\ QLineEdit(parent),\ m\_client(new\ QMqttClient(this))\ \{}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ We\ restrict\ the\ User\ input\ to\ only\ number\ characters}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00018}00018\ \ \ \ \ this-\/>setValidator(\textcolor{keyword}{new}\ QIntValidator(\textcolor{keyword}{this}));}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00026}\mbox{\hyperlink{class_input_mqtt_client_a81148037645765b580a6b31e982ff787}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_mqtt_client_a81148037645765b580a6b31e982ff787}{InputMqttClient::connectToBroker}}(\textcolor{keyword}{const}\ QString\ \&hostname,\ quint16\ port)\ \{}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}{m\_client}}-\/>setHostname(hostname);}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}{m\_client}}-\/>setPort(port);}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}{m\_client}}-\/>connectToHost();}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00036}\mbox{\hyperlink{class_input_mqtt_client_ac7ff830ba37c49ef2a0ec3e27bc8e63a}{00036}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_mqtt_client_ac7ff830ba37c49ef2a0ec3e27bc8e63a}{InputMqttClient::setTopic}}(\textcolor{keyword}{const}\ QString\ \&topic)\ \{}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_input_mqtt_client_afe6034971f369bf3f521b4dfa81c35d5}{m\_topic}}\ =\ topic;}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00043}\mbox{\hyperlink{class_input_mqtt_client_a468224762c4313c108ec391f881e8ea0}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_mqtt_client_a468224762c4313c108ec391f881e8ea0}{InputMqttClient::publishMessage}}()\ \{}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}{m\_client}}-\/>state()\ ==\ QMqttClient::Connected\ \&\&\ !\mbox{\hyperlink{class_input_mqtt_client_afe6034971f369bf3f521b4dfa81c35d5}{m\_topic}}.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_mqtt_client_a80e600eeebc9d4c58e311602d60c5104}{m\_client}}-\/>publish(\mbox{\hyperlink{class_input_mqtt_client_afe6034971f369bf3f521b4dfa81c35d5}{m\_topic}},\ this-\/>text().toUtf8());}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{inputmqttclient_8cpp_source_l00047}00047\ \}}
+
+\end{DoxyCode}

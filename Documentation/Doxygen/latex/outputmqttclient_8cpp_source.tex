@@ -1,0 +1,59 @@
+\doxysection{outputmqttclient.\+cpp}
+\hypertarget{outputmqttclient_8cpp_source}{}\label{outputmqttclient_8cpp_source}\mbox{\hyperlink{outputmqttclient_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{outputmqttclient_8h}{outputmqttclient.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00014}\mbox{\hyperlink{class_output_mqtt_client_a26dd1e70b708ea8dc9d0fda20cb9f857}{00014}}\ \mbox{\hyperlink{class_output_mqtt_client_a26dd1e70b708ea8dc9d0fda20cb9f857}{OutputMqttClient::OutputMqttClient}}(QWidget\ *parent)}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00015}00015\ \ \ \ \ :\ QPlainTextEdit(parent),\ m\_client(new\ QMqttClient(this))\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_a314ee11f0e26b08f5f8ef591bb63ebba}{m\_sum}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00017}00017\ \ \ \ \ connect(\mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}},\ \&QMqttClient::messageReceived,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_output_mqtt_client_a2f1a3a8f74cf7b08e88b09d939063575}{OutputMqttClient::onMessageReceived}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00018}00018\ \ \ \ \ connect(\mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}},\ \&QMqttClient::connected,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_output_mqtt_client_aaf47ec0d1de8ec5e65cc65fc23d3a384}{OutputMqttClient::onConnected}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00019}00019\ \ \ \ \ connect(\mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}},\ \&QMqttClient::disconnected,\ \textcolor{keyword}{this},\ [\textcolor{keyword}{this}]()\{\ appendPlainText(\textcolor{stringliteral}{"{}Disconnected\ from\ broker."{}});\ \});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00027}\mbox{\hyperlink{class_output_mqtt_client_ae2b4ef348b04f3b8c4fe15fff439f223}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_mqtt_client_ae2b4ef348b04f3b8c4fe15fff439f223}{OutputMqttClient::connectToBroker}}(\textcolor{keyword}{const}\ QString\ \&hostname,\ quint16\ port)\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}}-\/>setHostname(hostname);}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}}-\/>setPort(port);}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}}-\/>connectToHost();}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00038}\mbox{\hyperlink{class_output_mqtt_client_a6ab2a017c1bd108bcdb0fb76c93852bd}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_mqtt_client_a6ab2a017c1bd108bcdb0fb76c93852bd}{OutputMqttClient::subscribeToTopic}}(\textcolor{keyword}{const}\ QString\ \&topic,\ quint8\ qos)\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_ac7922edce7060c8ccf65bf821ce3fb05}{m\_topic}}\ =\ topic;}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_aace3782bc6f2a3dfbff8b91f2de3422a}{m\_qos}}\ =\ qos;}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00047}\mbox{\hyperlink{class_output_mqtt_client_aaf47ec0d1de8ec5e65cc65fc23d3a384}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_mqtt_client_aaf47ec0d1de8ec5e65cc65fc23d3a384}{OutputMqttClient::onConnected}}()\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00048}00048\ \ \ \ \ appendPlainText(\textcolor{stringliteral}{"{}Connected\ to\ broker."{}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_output_mqtt_client_ac7922edce7060c8ccf65bf821ce3fb05}{m\_topic}}.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ subscription\ =\ \mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\_client}}-\/>subscribe(\mbox{\hyperlink{class_output_mqtt_client_ac7922edce7060c8ccf65bf821ce3fb05}{m\_topic}},\ \mbox{\hyperlink{class_output_mqtt_client_aace3782bc6f2a3dfbff8b91f2de3422a}{m\_qos}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!subscription)\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ appendPlainText(\textcolor{stringliteral}{"{}Unable\ to\ create\ subscription\ object."{}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ connect(subscription,\ \&QMqttSubscription::stateChanged,\ \textcolor{keyword}{this},\ [\textcolor{keyword}{this},\ subscription](QMqttSubscription::SubscriptionState\ state)\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ QMqttSubscription::Subscribed)}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ appendPlainText(\textcolor{stringliteral}{"{}Successfully\ subscribed\ to\ topic."{}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ QMqttSubscription::Error)}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ appendPlainText(\textcolor{stringliteral}{"{}Subscription\ error."{}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00071}\mbox{\hyperlink{class_output_mqtt_client_a2f1a3a8f74cf7b08e88b09d939063575}{00071}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_output_mqtt_client_a2f1a3a8f74cf7b08e88b09d939063575}{OutputMqttClient::onMessageReceived}}(\textcolor{keyword}{const}\ QByteArray\ \&message,\ \textcolor{keyword}{const}\ QMqttTopicName\ \&topic)\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ Converting\ the\ message\ to\ an\ integer}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ ok;}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ message.toInt(\&ok);}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (ok)\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_output_mqtt_client_a314ee11f0e26b08f5f8ef591bb63ebba}{m\_sum}}\ +=\ value;\ \textcolor{comment}{//\ Adding\ the\ new\ value\ to\ the\ total\ sum}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ this-\/>appendPlainText(QString(\textcolor{stringliteral}{"{}Received:\ \%1,\ Total\ Sum:\ \%2"{}}).arg(value).arg(\mbox{\hyperlink{class_output_mqtt_client_a314ee11f0e26b08f5f8ef591bb63ebba}{m\_sum}}));}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00080}00080\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ this-\/>appendPlainText(\textcolor{stringliteral}{"{}Error!"{}});}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{outputmqttclient_8cpp_source_l00083}00083\ \}}
+
+\end{DoxyCode}

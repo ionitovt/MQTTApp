@@ -1,0 +1,198 @@
+\doxysection{Output\+Mqtt\+Client Class Reference}
+\hypertarget{class_output_mqtt_client}{}\label{class_output_mqtt_client}\index{OutputMqttClient@{OutputMqttClient}}
+
+
+The \doxylink{class_output_mqtt_client}{Output\+Mqtt\+Client} class extends QPlain\+Text\+Edit to provide MQTT subscription and message display capabilities.  
+
+
+
+
+{\ttfamily \#include $<$outputmqttclient.\+h$>$}
+
+Inheritance diagram for Output\+Mqtt\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_output_mqtt_client}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_output_mqtt_client_a26dd1e70b708ea8dc9d0fda20cb9f857}{Output\+Mqtt\+Client}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_output_mqtt_client}{Output\+Mqtt\+Client} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_mqtt_client_ae2b4ef348b04f3b8c4fe15fff439f223}{connect\+To\+Broker}} (const QString \&hostname, quint16 port)
+\begin{DoxyCompactList}\small\item\em Connects to the MQTT broker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_mqtt_client_a6ab2a017c1bd108bcdb0fb76c93852bd}{subscribe\+To\+Topic}} (const QString \&topic, quint8 qos)
+\begin{DoxyCompactList}\small\item\em Subscribes to a given MQTT topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_output_mqtt_client_a2f1a3a8f74cf7b08e88b09d939063575}{on\+Message\+Received}} (const QByte\+Array \&message, const QMqtt\+Topic\+Name \&topic)
+\begin{DoxyCompactList}\small\item\em This slot gets executed when a message is received. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_output_mqtt_client_aaf47ec0d1de8ec5e65cc65fc23d3a384}{on\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Slot that gets executed when the client is connected to the broker. Subscribes to the specified MQTT topic if not empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QMqtt\+Client \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}{m\+\_\+client}}
+\item 
+int \mbox{\hyperlink{class_output_mqtt_client_a314ee11f0e26b08f5f8ef591bb63ebba}{m\+\_\+sum}}
+\item 
+QString \mbox{\hyperlink{class_output_mqtt_client_ac7922edce7060c8ccf65bf821ce3fb05}{m\+\_\+topic}}
+\item 
+quint8 \mbox{\hyperlink{class_output_mqtt_client_aace3782bc6f2a3dfbff8b91f2de3422a}{m\+\_\+qos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_output_mqtt_client}{Output\+Mqtt\+Client} class extends QPlain\+Text\+Edit to provide MQTT subscription and message display capabilities. 
+
+This class integrates MQTT subscription functionality with a QPlain\+Text\+Edit widget, allowing the application to display messages received from MQTT topics. 
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8h_source_l00026}{26}} of file \mbox{\hyperlink{outputmqttclient_8h_source}{outputmqttclient.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_output_mqtt_client_a26dd1e70b708ea8dc9d0fda20cb9f857}\label{class_output_mqtt_client_a26dd1e70b708ea8dc9d0fda20cb9f857} 
+\index{OutputMqttClient@{OutputMqttClient}!OutputMqttClient@{OutputMqttClient}}
+\index{OutputMqttClient@{OutputMqttClient}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{OutputMqttClient()}{OutputMqttClient()}}
+{\footnotesize\ttfamily Output\+Mqtt\+Client\+::\+Output\+Mqtt\+Client (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_output_mqtt_client}{Output\+Mqtt\+Client} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent widget, default is nullptr. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{outputmqttclient_8cpp_source}{outputmqttclient.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_mqtt_client_ae2b4ef348b04f3b8c4fe15fff439f223}\label{class_output_mqtt_client_ae2b4ef348b04f3b8c4fe15fff439f223} 
+\index{OutputMqttClient@{OutputMqttClient}!connectToBroker@{connectToBroker}}
+\index{connectToBroker@{connectToBroker}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{connectToBroker()}{connectToBroker()}}
+{\footnotesize\ttfamily void Output\+Mqtt\+Client\+::connect\+To\+Broker (\begin{DoxyParamCaption}\item[{const QString \&}]{hostname,  }\item[{quint16}]{port }\end{DoxyParamCaption})}
+
+
+
+Connects to the MQTT broker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & The hostname or IP of the MQTT broker. \\
+\hline
+{\em port} & The network port of the MQTT broker, default MQTT port is 1883. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{outputmqttclient_8cpp_source}{outputmqttclient.\+cpp}}.
+
+\Hypertarget{class_output_mqtt_client_aaf47ec0d1de8ec5e65cc65fc23d3a384}\label{class_output_mqtt_client_aaf47ec0d1de8ec5e65cc65fc23d3a384} 
+\index{OutputMqttClient@{OutputMqttClient}!onConnected@{onConnected}}
+\index{onConnected@{onConnected}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{onConnected}{onConnected}}
+{\footnotesize\ttfamily void Output\+Mqtt\+Client\+::on\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Slot that gets executed when the client is connected to the broker. Subscribes to the specified MQTT topic if not empty. 
+
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{outputmqttclient_8cpp_source}{outputmqttclient.\+cpp}}.
+
+\Hypertarget{class_output_mqtt_client_a2f1a3a8f74cf7b08e88b09d939063575}\label{class_output_mqtt_client_a2f1a3a8f74cf7b08e88b09d939063575} 
+\index{OutputMqttClient@{OutputMqttClient}!onMessageReceived@{onMessageReceived}}
+\index{onMessageReceived@{onMessageReceived}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{onMessageReceived}{onMessageReceived}}
+{\footnotesize\ttfamily void Output\+Mqtt\+Client\+::on\+Message\+Received (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{message,  }\item[{const QMqtt\+Topic\+Name \&}]{topic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This slot gets executed when a message is received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The received message. \\
+\hline
+{\em topic} & The topic from which the message was received. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{outputmqttclient_8cpp_source}{outputmqttclient.\+cpp}}.
+
+\Hypertarget{class_output_mqtt_client_a6ab2a017c1bd108bcdb0fb76c93852bd}\label{class_output_mqtt_client_a6ab2a017c1bd108bcdb0fb76c93852bd} 
+\index{OutputMqttClient@{OutputMqttClient}!subscribeToTopic@{subscribeToTopic}}
+\index{subscribeToTopic@{subscribeToTopic}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{subscribeToTopic()}{subscribeToTopic()}}
+{\footnotesize\ttfamily void Output\+Mqtt\+Client\+::subscribe\+To\+Topic (\begin{DoxyParamCaption}\item[{const QString \&}]{topic,  }\item[{quint8}]{qos }\end{DoxyParamCaption})}
+
+
+
+Subscribes to a given MQTT topic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em topic} & The MQTT topic to subscribe to. \\
+\hline
+{\em qos} & The Quality of Service level for the subscription. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{outputmqttclient_8cpp_source}{outputmqttclient.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969}\label{class_output_mqtt_client_a0ace15c735ad50c84611d10bc251f969} 
+\index{OutputMqttClient@{OutputMqttClient}!m\_client@{m\_client}}
+\index{m\_client@{m\_client}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{m\_client}{m\_client}}
+{\footnotesize\ttfamily QMqtt\+Client\texorpdfstring{$\ast$}{*} Output\+Mqtt\+Client\+::m\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8h_source_l00039}{39}} of file \mbox{\hyperlink{outputmqttclient_8h_source}{outputmqttclient.\+h}}.
+
+\Hypertarget{class_output_mqtt_client_aace3782bc6f2a3dfbff8b91f2de3422a}\label{class_output_mqtt_client_aace3782bc6f2a3dfbff8b91f2de3422a} 
+\index{OutputMqttClient@{OutputMqttClient}!m\_qos@{m\_qos}}
+\index{m\_qos@{m\_qos}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{m\_qos}{m\_qos}}
+{\footnotesize\ttfamily quint8 Output\+Mqtt\+Client\+::m\+\_\+qos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8h_source_l00042}{42}} of file \mbox{\hyperlink{outputmqttclient_8h_source}{outputmqttclient.\+h}}.
+
+\Hypertarget{class_output_mqtt_client_a314ee11f0e26b08f5f8ef591bb63ebba}\label{class_output_mqtt_client_a314ee11f0e26b08f5f8ef591bb63ebba} 
+\index{OutputMqttClient@{OutputMqttClient}!m\_sum@{m\_sum}}
+\index{m\_sum@{m\_sum}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{m\_sum}{m\_sum}}
+{\footnotesize\ttfamily int Output\+Mqtt\+Client\+::m\+\_\+sum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8h_source_l00040}{40}} of file \mbox{\hyperlink{outputmqttclient_8h_source}{outputmqttclient.\+h}}.
+
+\Hypertarget{class_output_mqtt_client_ac7922edce7060c8ccf65bf821ce3fb05}\label{class_output_mqtt_client_ac7922edce7060c8ccf65bf821ce3fb05} 
+\index{OutputMqttClient@{OutputMqttClient}!m\_topic@{m\_topic}}
+\index{m\_topic@{m\_topic}!OutputMqttClient@{OutputMqttClient}}
+\doxysubsubsection{\texorpdfstring{m\_topic}{m\_topic}}
+{\footnotesize\ttfamily QString Output\+Mqtt\+Client\+::m\+\_\+topic\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{outputmqttclient_8h_source_l00041}{41}} of file \mbox{\hyperlink{outputmqttclient_8h_source}{outputmqttclient.\+h}}.
+
