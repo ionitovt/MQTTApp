@@ -135,7 +135,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>On A/topic1 &amp; B/topic2: </string>
+     <string>On A/topic1 &amp; A/topic2: </string>
     </property>
    </widget>
   </widget>
