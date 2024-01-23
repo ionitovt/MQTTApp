@@ -84,7 +84,7 @@ as shown below:
 
 ## Authors
 
-* **Yoan Tyankovski** - [@filipdutescu](https://github.com/ionitovt)
+* **Yoan Tyankovski** - [@ionitovt](https://github.com/ionitovt)
 
 ## License
 
